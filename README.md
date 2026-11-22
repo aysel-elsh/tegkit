@@ -9,7 +9,7 @@ Use it to answer the usual first questions fast:
 - What do 4 in series × 2 in parallel give me?
 
 ```bash
-pip install tegkit        # once published; for now: pip install git+https://github.com/aysel-elsh/tegkit
+pip install tegkit
 ```
 
 ## Quick start
