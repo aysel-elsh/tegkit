@@ -40,6 +40,18 @@ Or straight from a bench test: `TEGModule.from_measurements(voc, isc, delta_t, t
 | `figure_of_merit`, `zt`, `max_efficiency`, `optimal_efficiency_load` | Z, ZT and the ideal efficiency limit |
 | `module_delta_t` | ΔT left after heat-sink / interface thermal resistances |
 | `TEGArray` | Series/parallel arrays of identical modules |
+| `iv_curve`, `max_power_point` | I-V / power sweep and the maximum power point |
+| `modules_for_power`, `suggest_array` | How many modules, and in what series/parallel layout |
+| `required_cold_side_resistance` | How good your heat sink must be to keep a target ΔT |
+| `tegkit.peltier` | Cooler mode: cooling power, COP, max ΔT, optimal current |
+
+## Command line
+
+```bash
+tegkit --seebeck 0.05 --resistance 2 --conductance 0.5 --dt 40 --series 4 --parallel 2 --points 5
+```
+
+prints open-circuit voltage, matched load, max power and an I-V table.
 
 ## Model and limits
 
