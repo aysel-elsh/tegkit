@@ -1,6 +1,6 @@
 """tegkit: small, dependency-free toolkit for modelling thermoelectric generators."""
 
-from . import peltier
+from . import peltier, presets
 from .array import TEGArray
 from .curves import OperatingPoint, iv_curve, max_power_point
 from .module import TEGModule
@@ -17,7 +17,8 @@ __all__ = [
     "suggest_array",
     "required_cold_side_resistance",
     "peltier",
+    "presets",
     "c_to_k",
     "k_to_c",
 ]
-__version__ = "0.2.0"
+__version__ = "0.3.0"
