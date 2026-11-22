@@ -45,6 +45,19 @@ Or straight from a bench test: `TEGModule.from_measurements(voc, isc, delta_t, t
 | `required_cold_side_resistance` | How good your heat sink must be to keep a target ΔT |
 | `tegkit.peltier` | Cooler mode: cooling power, COP, max ΔT, optimal current |
 
+## Real-module presets
+
+```python
+from tegkit import presets
+presets.names()        # ['TEC-30-36-71', 'TEC-40-36-127', 'TEC1-12706', 'TEG2-126LDT', 'TG12-4']
+m = presets.get("TG12-4")
+presets.info("TG12-4").source   # datasheet URL + the raw numbers used
+```
+
+Every preset is derived from a public datasheet, and the tests check it reproduces that datasheet's own numbers. Or build your own from any Peltier datasheet with `TEGModule.from_tec_datasheet(i_max, v_max, delta_t_max, t_hot)`.
+
+**Adding a preset is a great first PR**: cite the datasheet and add a test.
+
 ## Command line
 
 ```bash
