@@ -97,6 +97,37 @@ class TEGModule:
             name=name,
         )
 
+    @classmethod
+    def from_tec_datasheet(
+        cls,
+        i_max: float,
+        v_max: float,
+        delta_t_max: float,
+        t_hot: float,
+        name: str = "",
+    ) -> "TEGModule":
+        """Build a module from the four numbers every Peltier (TEC) datasheet
+        lists: Imax (A), Vmax (V) and dTmax (K) at hot-side temperature
+        ``t_hot`` (kelvin).
+
+        Uses the standard inversion of the constant-property model::
+
+            S = Vmax / Th
+            R = (Vmax / Imax) * (Th - dTmax) / Th
+            K = Imax * Vmax * (Th - dTmax) / (2 * Th * dTmax)
+        """
+        for label, value in (("i_max", i_max), ("v_max", v_max), ("delta_t_max", delta_t_max), ("t_hot", t_hot)):
+            _check_positive(label, value)
+        if delta_t_max >= t_hot:
+            raise ValueError("delta_t_max must be smaller than t_hot")
+        t_cold = t_hot - delta_t_max
+        return cls(
+            seebeck=v_max / t_hot,
+            resistance=(v_max / i_max) * t_cold / t_hot,
+            thermal_conductance=i_max * v_max * t_cold / (2.0 * t_hot * delta_t_max),
+            name=name,
+        )
+
     # ------------------------------------------------------------------ #
     # Electrical behaviour
     # ------------------------------------------------------------------ #
