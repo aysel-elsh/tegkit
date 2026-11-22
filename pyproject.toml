@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tegkit"
-version = "0.2.0"
+version = "0.3.0"
 description = "Small, dependency-free toolkit for modelling thermoelectric generators (TEGs)"
 readme = "README.md"
 license = "MIT"
