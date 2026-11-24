@@ -2,6 +2,8 @@
 
 Thanks for helping! Students, hobbyists and researchers are all welcome.
 
+New to open source? Start with [docs/FIRST_PR.md](docs/FIRST_PR.md), a step-by-step guide to your first pull request.
+
 ## Getting set up
 
 ```bash
