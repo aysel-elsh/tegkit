@@ -21,4 +21,4 @@ __all__ = [
     "c_to_k",
     "k_to_c",
 ]
-__version__ = "0.3.0"
+__version__ = "0.3.1"
