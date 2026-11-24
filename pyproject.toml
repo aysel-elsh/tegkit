@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tegkit"
-version = "0.3.0"
+version = "0.3.1"
 description = "Small, dependency-free toolkit for modelling thermoelectric generators (TEGs)"
 readme = "README.md"
 license = "MIT"
@@ -30,6 +30,7 @@ tegkit = "tegkit.__main__:main"
 [project.urls]
 Homepage = "https://github.com/aysel-elsh/tegkit"
 Issues = "https://github.com/aysel-elsh/tegkit/issues"
+Changelog = "https://github.com/aysel-elsh/tegkit/blob/main/CHANGELOG.md"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
