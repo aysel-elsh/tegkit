@@ -1,5 +1,7 @@
 # tegkit
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aysel-elsh/tegkit/blob/main/examples/tegkit_demo.ipynb)
+
 Small, dependency-free Python toolkit for modelling **thermoelectric generators (TEGs)**: the little ceramic modules that turn a temperature difference into electricity.
 
 Use it to answer the usual first questions fast:
@@ -11,6 +13,8 @@ Use it to answer the usual first questions fast:
 ```bash
 pip install tegkit
 ```
+
+**Try it in your browser first:** the [Colab demo](https://colab.research.google.com/github/aysel-elsh/tegkit/blob/main/examples/tegkit_demo.ipynb) walks through a real module's power curve, heat-sink losses and array sizing in about 5 minutes. Nothing to install.
 
 ## Quick start
 
