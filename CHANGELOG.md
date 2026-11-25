@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **Colab demo notebook** (`examples/tegkit_demo.ipynb`): power curve, heat-sink losses, array sizing and efficiency for a real preset module, runnable in the browser. Linked from the README.
+
 ## 0.3.0 (2026-11-22)
 
 - **Presets** from public datasheets: TEC1-12706, Wakefield TEC-40-36-127 and TEC-30-36-71, Marlow TG12-4, and TECTEG TEG2-126LDT. Each one stores its source URL and raw values, and is tested against them.
