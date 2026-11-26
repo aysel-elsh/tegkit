@@ -12,7 +12,7 @@ __all__ = ["TEGArray"]
 @dataclass(frozen=True)
 class TEGArray:
     """``series`` modules per string, ``parallel`` strings, all identical and
-    all seeing the same temperature difference.
+    all seeing the same temperature difference. Both counts must be positive integers.
     """
 
     module: TEGModule
@@ -20,8 +20,9 @@ class TEGArray:
     parallel: int = 1
 
     def __post_init__(self) -> None:
-        if self.series < 1 or self.parallel < 1:
-            raise ValueError("series and parallel must be >= 1")
+        for name, count in (("series", self.series), ("parallel", self.parallel)):
+            if isinstance(count, bool) or not isinstance(count, int) or count < 1:
+                raise ValueError(f"{name} must be an integer >= 1")
 
     @property
     def count(self) -> int:
